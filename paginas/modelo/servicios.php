@@ -1,5 +1,5 @@
 <?php
-    class Recurso {
+    class Servicios {
         public $Id_servicios;
         public $Nombre;
         public $Precio;

@@ -1,5 +1,4 @@
 <?php
-
 class Cliente
 {
     public $codigo_cliente;
@@ -9,7 +8,5 @@ class Cliente
     public $fecha_nacimiento;
     public $direccion;
     public $correo_electronico;
-    public $cliente_codigo_distrito;
+    public $distrito_nombre;
 }
-
-?>

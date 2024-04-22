@@ -27,8 +27,8 @@
         <div class="container mt-3">
             <header>
                 <h1 class="text-info">
-                    <i class="fas fa-info-circle"></i> Información del Empleado pe</h1>
-                </h1>
+                    <i class="fas fa-info-circle"></i> Información del Empleado</h1>
+                </hr>
             </header>
 
             <nav>
@@ -44,7 +44,7 @@
                             <div class="card-body">
                                 <div class="row g-3">
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <h5 class="card-title">DNI</h5>
                                         <p class="card-text"><?=$rs_emp->DNI?></p>
                                     </div>
@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <h5 class="card-title">Sueldo</h5>
-                                        <p class="card-text"><?=$rs_emp->Sueldo?></p>
+                                        <p class="card-text">S/. <?=$rs_emp->Sueldo?></p>
                                     </div>
                                     <div class="col-md-4">
                                         <h5 class="card-title">Estado Civil</h5>

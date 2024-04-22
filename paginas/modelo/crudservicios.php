@@ -90,7 +90,7 @@ class CRUDServicios extends Conexion{
 
         $cn = null;
 
-        echo json_encode($arr_prod);
+        return json_encode($arr_prod);
     }
     //Filtrar Servicios
     public function FiltrarServicios($valor) {
@@ -113,12 +113,12 @@ class CRUDServicios extends Conexion{
         if ($nr > 0) {
             echo"<table class='table table-hover table-sm table-success table-striped'>";
             echo"<tr class='table-primary'>";
-            echo"<th>Id_Servicios</th>";
+            echo"<th>Id_servicios</th>";
             echo"<th>Nombre</th>";
+            echo"<th>Precio</th>";
+            echo"<th>Duracion</th>";
             echo"<th>Categoria</th>";
-            echo"<th>Estado</th>";
-            echo"<th>Fecha_Adquisicion</th>";
-            echo"<th> Costo</th>";
+            echo"<th> Estado</th>";
             echo "</tr>";
 
             $i = 0; // Contador del numero de registro
@@ -127,13 +127,12 @@ class CRUDServicios extends Conexion{
                 $i++;
 
                 echo "<tr>";
-                echo "<td>".$i."</td>";
-                echo "<td>".$prod->Id_Servicios."</td>";
+                echo "<td>".$prod->Id_servicios."</td>";
                 echo "<td>".$prod->Nombre."</td>";
+                echo "<td class='text-center'>".$prod->Precio."</td>";
+                echo "<td>S/ ".$prod->Duracion."</td>";
                 echo "<td class='text-center'>".$prod->Categoria."</td>";
                 echo "<td>S/ ".$prod->Estado."</td>";
-                echo "<td class='text-center'>".$prod->Fecha_Adquisicion."</td>";
-                echo "<td>S/ ".$prod->Costo."</td>";
                 echo "</td>";
             }
             echo "</table";
@@ -152,16 +151,16 @@ class CRUDServicios extends Conexion{
         try{
             $cn = $this->Conectar();
 
-            $sql = "call sp_RegistrarServicios(:idrec, :nom, :cat, :est, :fch, :cost)";
+            $sql = "call sp_RegistrarServicios(:idser, :nom, :pre, :dur, :cat, :est)";
 
             $snt = $cn->prepare($sql);
 
-            $snt->bindParam(":codprod", $Servicios->Id_servicios);
-            $snt->bindParam(":prod", $Servicios->Nombre);
-            $snt->bindParam(":cst",$Servicios->Precio);
-            $snt->bindParam(":gnc",$Servicios->Duracion);
-            $snt->bindParam(":codmar",$Servicios->Categoria);
-            $snt->bindParam(":codcat",$Servicios->Estado);
+            $snt->bindParam(":idser", $Servicios->Id_servicios);
+            $snt->bindParam(":nom", $Servicios->Nombre);
+            $snt->bindParam(":pre",$Servicios->Precio);
+            $snt->bindParam(":dur",$Servicios->Duracion);
+            $snt->bindParam(":cat",$Servicios->Categoria);
+            $snt->bindParam(":est",$Servicios->Estado);
 
             $snt->execute();
 
@@ -175,16 +174,16 @@ class CRUDServicios extends Conexion{
         try {
             $cn = $this->Conectar();
 
-            $sql = "call sp_EditarRegistro(:idrec, :nom, :cat, :est, :fch, :cost)";
+            $sql = "call sp_EditarServicios(:idser, :nom, :pre, :dur, :cat, :est)";
 
             $snt = $cn->prepare($sql);
 
-            $snt->bindParam(":codprod", $Servicios->Id_servicios);
-            $snt->bindParam(":prod", $Servicios->Nombre);
-            $snt->bindParam(":cst",$Servicios->Precio);
-            $snt->bindParam(":gnc",$Servicios->Duracion);
-            $snt->bindParam(":codmar",$Servicios->Categoria);
-            $snt->bindParam(":codcat",$Servicios->Estado);
+            $snt->bindParam(":idser", $Servicios->Id_servicios);
+            $snt->bindParam(":nom", $Servicios->Nombre);
+            $snt->bindParam(":pre",$Servicios->Precio);
+            $snt->bindParam(":dur",$Servicios->Duracion);
+            $snt->bindParam(":cat",$Servicios->Categoria);
+            $snt->bindParam(":est",$Servicios->Estado);
 
             $snt->execute();
 
@@ -195,7 +194,7 @@ class CRUDServicios extends Conexion{
     }
          //Borrar Servicios
 
-         public function BorrarRegistro($codprod) {
+         public function BorrarServicio($codprod) {
             try {
                 $cn = $this->Conectar();
 

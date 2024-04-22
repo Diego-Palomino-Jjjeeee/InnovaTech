@@ -47,11 +47,11 @@
                                         <h5 class="card-title">ID DEL Servicio</h5>
                                         <p class="card-text"><?=$rs_prod->Id_servicios?></p>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-4">
                                         <h5 class="card-title">NOMBRE</h5>
                                         <p class="card-text"><?=$rs_prod->Nombre?></p>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <h5 class="card-title">Precio</h5>
                                         <p class="card-text"><?=$rs_prod->Precio?></p>
                                     </div>
@@ -60,12 +60,12 @@
                                         <p class="card-text"><?=$rs_prod->Duracion?></p>
                                     </div>
                                     <div class="col-md-4">
-                                        <h5 class="card-title"></h5>
+                                        <h5 class="card-title">Categoria</h5>
                                         <p class="card-text"><?=$rs_prod->Categoria?></p>
                                     </div>
                                     <div class="col-md-4">
                                         <h5 class="card-title">COSTO</h5>
-                                        <p class="card-text">S/.<?=$rs_prod->Estado?></p>
+                                        <p class="card-text"><?=$rs_prod->Estado?></p>
                                     </div>
                                 </div>
                             </div>

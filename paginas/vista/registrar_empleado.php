@@ -21,7 +21,6 @@
                 <a href="listar_empleado.php" class="btn btn-outline-secondary btn-sm">
                     <i class="fas fa-arrow-circle-left"></i> Regresar
                 </a>
-
             </nav>
 
             <section>

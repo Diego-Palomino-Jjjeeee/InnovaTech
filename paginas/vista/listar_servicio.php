@@ -33,6 +33,9 @@
                     <a href="filtrar_servicio.php" class="btn btn-outline-primary btn">
                         <i class="fas fa-filter"></i> Filtrar
                     </a>
+                    <a href="formulario.php" class="btn btn-outline-primary btn">
+                        <i class="fas fa-filter"></i> Enviar Correo
+                    </a>
                 </div>
             </nav>
 
@@ -95,9 +98,9 @@
                     </div>
                     <div class="modal-body">
                         <div class="row justify-content-center">
-                            <h5 class="card-title">¿Seguro que desea borrar el Registro? :v</h5>
+                            <h5 class="card-title">¿Seguro que desea borrar el Registro? </h5>
                             <p class="card-text">
-                                <span class="lbl_prod"></span> (<pan class="lbl_codprod"></pan>)
+                                <span class="lbl_prod"></span> (<pan class="lbl_codser"></pan>)
                             </p>
                         </div>
                     </div>
@@ -110,6 +113,6 @@
                 </div>
             </div>                
         </div>
-
     </body>
 </html>
+

@@ -19,11 +19,14 @@
                     <a class="nav-link" href="<?= $ruta ?>/paginas/vista/listar_servicio.php">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= $ruta ?>/paginas/vista/listar_recurso.php">Recursos</a>
+                    <a class="nav-link" href="<?=$ruta?>/paginas/vista/listar_recurso.php">Recursos1</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../vista/listar_empleado.php">Empleados</a>
                 </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="../vista/enviar_correo.php">Enviar correo</a>
+                </li>
             </ul>
         </div>  
     </div>

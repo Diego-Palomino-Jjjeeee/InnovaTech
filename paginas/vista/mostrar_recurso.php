@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"> 
     <?php
         $ruta = "../..";
-        $titulo = "Aplicación de Ventas - Información del Recurso";
+        $titulo = "Aplicación de Ventas - Información del Recurso"; 
         include("../includes/cabecera.php");
     ?>
     <body>
@@ -10,33 +10,33 @@
             include("../includes/menu.php");
             include "../includes/cargar_clases.php";
 
-            if(isset($_GET["codrec"])) {
-                $codrec = $_GET["codrec"];
+            if (isset($_GET["id_recurso"])) { 
+                $id_recurso = $_GET["id_recurso"];
 
-                $crudproducto = new CRUDRecursos();
+                $crudrecurso = new CRUDRecurso();
 
-                $rs_prod = $crudproducto->MostrarRecursoPorCodigo($codrec); 
+                $rs_recurso = $crudrecurso->MostrarRecursoPorId($id_recurso);
 
-                if (empty($rs_prod)) {
+                if (empty($rs_recurso)) {
                     header("location: listar_recurso.php");
                 }
+                
             } else {
-                header ("location: listar_recurso.php");
+                header("location: listar_recurso.php");
             }
         ?>
         <div class="container mt-3">
             <header>
                 <h1 class="text-info">
-                    <i class="fas fa-info-circle"></i> Información del Recurso</h1>
-                </h1>
+                    <i class="fa fa-info-circle"></i> Información del Recurso</h1> 
+                <hr/>
             </header>
 
             <nav>
-                <a href="listar_recurso.php" class="btn btn-outline-secondary btn-sm">
+                <a href="listar_recurso.php" class="btn btn-outline-secondary btn-sm"> 
                     <i class="fas fa-arrow-circle-left"></i> Regresar
                 </a>
             </nav>
-
             <section>
                 <article>
                     <div class="row justify-content-center mt-3">
@@ -44,28 +44,29 @@
                             <div class="card-body">
                                 <div class="row g-3">
                                     <div class="col-md-4">
-                                        <h5 class="card-title">ID DEL RECURSO</h5>
-                                        <p class="card-text"><?=$rs_prod->Id_recursos?></p>
+                                        <h5 class="card-title">ID Recurso</h5>
+                                        <p class="card-text"><?=$rs_recurso->Id_recursos?></p> 
                                     </div>
+                                    <div class="col-md-8"></div>
                                     <div class="col-md-8">
-                                        <h5 class="card-title">NOMBRE</h5>
-                                        <p class="card-text"><?=$rs_prod->Nombre?></p>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <h5 class="card-title">CATEGORIA</h5>
-                                        <p class="card-text"><?=$rs_prod->Categoria?></p>
+                                        <h5 class="card-title">Nombre</h5>
+                                        <p class="card-text"><?=$rs_recurso->Nombre?></p>
                                     </div>
                                     <div class="col-md-4">
-                                        <h5 class="card-title">ESTADO</h5>
-                                        <p class="card-text"><?=$rs_prod->Estado?></p>
+                                        <h5 class="card-title">Categoría</h5>
+                                        <p class="card-text"><?=$rs_recurso->Categoria?></p>
                                     </div>
                                     <div class="col-md-4">
-                                        <h5 class="card-title">FECHA DE ADQUISICION</h5>
-                                        <p class="card-text"><?=$rs_prod->Fecha_Adquisicion?></p>
+                                        <h5 class="card-title">Estado</h5>
+                                        <p class="card-text"><?=$rs_recurso->Estado?></p>
                                     </div>
                                     <div class="col-md-4">
-                                        <h5 class="card-title">COSTO</h5>
-                                        <p class="card-text"><?=$rs_prod->Costo?></p>
+                                        <h5 class="card-title">Fecha Adquisición</h5>
+                                        <p class="card-text"><?=$rs_recurso->Fecha_Adquisicion?></p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5 class="card-title">Costo</h5>
+                                        <p class="card-text"><?=$rs_recurso->Costo?></p>
                                     </div>
                                 </div>
                             </div>
@@ -73,10 +74,9 @@
                     </div>
                 </article>
             </section>
-
             <?php
                 include("../includes/pie.php");
-            ?>
+            ?> 
         </div>
     </body>
 </html>

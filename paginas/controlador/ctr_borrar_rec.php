@@ -8,5 +8,5 @@
 
         $crudproducto->BorrarRegistro($codprod);
 
-        header("location: ../vista/listar_producto.php");
+        header("location: ../vista/listar_empleado.php");
     }
